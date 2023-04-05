@@ -33,6 +33,13 @@ function generatePassword() {
         return;
     };
 
+    let length = prompt("Choose a password length between 8 and 128 characters");
+
+    if (length < 8 || length > 128) {
+        alert("Please choose a password length beween 8 and 128 characters");
+        generatePassword();
+        return;
+    }
 };
 
 function writePassword() {
