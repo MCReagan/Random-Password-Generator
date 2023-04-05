@@ -44,8 +44,6 @@ function generatePassword() {
       
     charsReplace3.split("");
     
-    // code works great above this point, need to finish password generation for loop
-
     for (var i = 0; i < length; i++) {
         var randomNumber = Math.floor(Math.random() * charsReplace3.length);
         password += charsReplace3.substring(randomNumber, randomNumber +1);
@@ -53,7 +51,8 @@ function generatePassword() {
     
     console.log(password);
     password = "";
-    // console.log(length);
+
+    // need to return password back to page
 };
 
 function writePassword() {
