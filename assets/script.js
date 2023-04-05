@@ -26,6 +26,13 @@ function generatePassword() {
     } else {
         var passwordReplace3 = passwordReplace2.replace(" !#$%&'()*+,-./:;<=>?@[]^\_`{|}~", "");
     };
+
+    if (passwordReplace3 == "") {
+        alert("Please choose at least one category of characters.");
+        generatePassword();
+        return;
+    };
+
 };
 
 function writePassword() {
