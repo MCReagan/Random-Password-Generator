@@ -51,13 +51,22 @@ function generatePassword() {
     return password;
 };
 
+
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-
+    
     passwordText.value = password;
     return;
 };
 
+// this line of code is not functioning as I would expect
+// function resetPassword() {
+//     var password = "Your Secure Password";
+//     var passwordText = document.querySelector("#password");
+
+//     return passwordText.value = password;
+// };
+// generateBtn.addEventListener("click", resetPassword);
 
 generateBtn.addEventListener("click", writePassword);
