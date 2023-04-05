@@ -1,33 +1,34 @@
 var generateBtn = document.querySelector("#generate");
+var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !#$%&'()*+,-./:;<=>?@[]^\_`{|}~";
+var pass = "";
 
 function generatePassword() {
-    var password = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !#$%&'()*+,-./:;<=>?@[]^\_`{|}~";
 
     if (confirm("Would you like to include Upper Case characters?")) {
-        var passwordReplace = password;
+        var charsReplace = chars;
     } else {
-        var passwordReplace = password.replace("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "");
+        var charsReplace = chars.replace("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "");
     };
 
     if (confirm("Would you like to include lower case characters")) {
-        var passwordReplace1 = passwordReplace;
+        var charsReplace1 = charsReplace;
     } else {
-        var passwordReplace1 = passwordReplace.replace("abcdefghijklmnopqrstuvwxyz", "");
+        var charsReplace1 = charsReplace.replace("abcdefghijklmnopqrstuvwxyz", "");
     };
 
     if (confirm("Would you like to include numbers?")) {
-        var passwordReplace2 = passwordReplace1;
+        var charsReplace2 = charsReplace1;
     } else {
-        var passwordReplace2 = passwordReplace1.replace("0123456789", "");
+        var charsReplace2 = charsReplace1.replace("0123456789", "");
     };
 
     if (confirm("Would you like to include special characters?")) {
-        var passwordReplace3 = passwordReplace2;
+        var charsReplace3 = charsReplace2;
     } else {
-        var passwordReplace3 = passwordReplace2.replace(" !#$%&'()*+,-./:;<=>?@[]^\_`{|}~", "");
+        var charsReplace3 = charsReplace2.replace(" !#$%&'()*+,-./:;<=>?@[]^\_`{|}~", "");
     };
 
-    if (passwordReplace3 == "") {
+    if (charsReplace3 == "") {
         alert("Please choose at least one category of characters.");
         generatePassword();
         return;
@@ -40,6 +41,16 @@ function generatePassword() {
         generatePassword();
         return;
     }
+
+    console.log(charsReplace3 , charsReplace3.length , length);
+
+    // for (var i = 0; i <= length; i++) {
+    //     var randomNumber = Math.floor(Math.random() * charsReplace3.length);
+    //     pass += charsReplace3.substring(randomNumber, randomNumber +1);
+    // }
+    
+    // console.log(randomNumber);
+    // console.log(length);
 };
 
 function writePassword() {
