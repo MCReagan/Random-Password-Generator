@@ -48,11 +48,7 @@ function generatePassword() {
         var randomNumber = Math.floor(Math.random() * charsReplace3.length);
         password += charsReplace3.substring(randomNumber, randomNumber +1);
     } 
-    
-    console.log(password);
-    password = "";
-
-    // need to return password back to page
+    return password;
 };
 
 function writePassword() {
