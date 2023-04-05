@@ -1,6 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !#$%&'()*+,-./:;<=>?@[]^\_`{|}~";
-var pass = "";
+var password = "";
 
 function generatePassword() {
 
@@ -8,7 +8,7 @@ function generatePassword() {
         var charsReplace = chars;
     } else {
         var charsReplace = chars.replace("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "");
-    };
+    } 
 
     if (confirm("Would you like to include lower case characters")) {
         var charsReplace1 = charsReplace;
@@ -41,15 +41,18 @@ function generatePassword() {
         generatePassword();
         return;
     }
-
-    console.log(charsReplace3 , charsReplace3.length , length);
-
-    // for (var i = 0; i <= length; i++) {
-    //     var randomNumber = Math.floor(Math.random() * charsReplace3.length);
-    //     pass += charsReplace3.substring(randomNumber, randomNumber +1);
-    // }
+      
+    charsReplace3.split("");
     
-    // console.log(randomNumber);
+    // code works great above this point, need to finish password generation for loop
+
+    for (var i = 0; i < length; i++) {
+        var randomNumber = Math.floor(Math.random() * charsReplace3.length);
+        password += charsReplace3.substring(randomNumber, randomNumber +1);
+    } 
+    
+    console.log(password);
+    password = "";
     // console.log(length);
 };
 
@@ -58,6 +61,8 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
+    return;
 };
+
 
 generateBtn.addEventListener("click", writePassword);
